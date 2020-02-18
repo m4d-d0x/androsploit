@@ -1,8 +1,11 @@
 module.exports = {
     name: "help",
-    desc: "",
+    desc: "Shows a list of available commands",
     
     run: (args) => {
-        console.log('HELP COMMAND')
+        const commands = require('../cHandler')()
+        commands.forEach((command) => {
+            console.log(command.name + " - " + command.desc)
+        })
     }
 }
